@@ -332,11 +332,11 @@ const App = () => {
   // Data for the different sections of the website
   const servicesData = [
     { title: "Web Development", description: "Crafting responsive, high-performance websites and web applications.", icon: Code },
-    { title: "Cloud Solutions", description: "Expert cloud migration and optimization for scalable and secure infrastructure.", icon: Server },
-    { title: "AI & Machine Learning", description: "Leveraging artificial intelligence to automate processes and create smarter solutions.", icon: Lightbulb },
-    { title: "Data Analytics", description: "Turning complex data into actionable insights for informed business decisions.", icon: BarChart },
-    { title: "Mobile App Development", description: "Building native and cross-platform apps for a seamless user experience.", icon: Rocket },
-    { title: "IT Consulting", description: "Providing strategic guidance and expert advice to optimize your technology stack.", icon: Phone },
+    { title: "Cloud Solutions", description: "Expert cloud migration and optimization for scalable and secure infrastructure." },
+    { title: "AI & Machine Learning", description: "Leveraging artificial intelligence to automate processes and create smarter solutions."},
+    { title: "Data Analytics", description: "Turning complex data into actionable insights for informed business decisions."},
+    { title: "Mobile App Development", description: "Building native and cross-platform apps for a seamless user experience."},
+    { title: "IT Consulting", description: "Providing strategic guidance and expert advice to optimize your technology stack."},
   ];
 
   const internsData = [
