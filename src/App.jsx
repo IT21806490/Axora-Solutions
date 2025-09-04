@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Rocket, Server, Lightbulb, Mail, Code, BarChart, Phone, MapPin, Linkedin, Github, PenSquare, ChevronRight } from 'lucide-react';
+import { Rocket, Server, Lightbulb, Mail, Code, BarChart, Phone, MapPin, Linkedin, Github, PenSquare, ChevronRight, Menu, X } from 'lucide-react';
 import * as THREE from 'three';
 
 // Import all required icons from lucide-react.
@@ -15,7 +15,9 @@ const icons = {
   MapPin,
   Linkedin,
   Github,
-  PenSquare
+  PenSquare,
+  Menu,
+  X
 };
 
 // Main App component containing all logic and UI
@@ -29,6 +31,7 @@ const App = () => {
   const [visibleInterns, setVisibleInterns] = useState({});
   const [visibleBlogPosts, setVisibleBlogPosts] = useState({});
   const [visibleWhyUs, setVisibleWhyUs] = useState({});
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // New state for mobile menu toggle
   const threeCanvasRef = useRef(null);
   const mainRef = useRef(null);
 
@@ -215,6 +218,7 @@ const App = () => {
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+    setIsMenuOpen(false); // Close menu on tab click
     if (mainRef.current) {
       mainRef.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -366,11 +370,23 @@ const App = () => {
       {/* Navigation header with blur effect */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-slate-900 bg-opacity-80 backdrop-blur-sm shadow-lg">
         <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
-          <div className="flex items-center gap-2 mb-4 sm:mb-0">
-            <Code size={32} className="text-blue-400" />
-            <span className="text-2xl font-bold tracking-wider text-white">AXORA SOLUTIONS</span>
+          <div className="flex items-center justify-between w-full sm:w-auto">
+            <div className="flex items-center gap-2">
+              <Code size={32} className="text-blue-400" />
+              <span className="text-2xl font-bold tracking-wider text-white">AXORA SOLUTIONS</span>
+            </div>
+            {/* Mobile menu toggle button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="sm:hidden text-gray-400 hover:text-white p-2 rounded"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
-          <nav className="flex flex-wrap justify-center sm:justify-end gap-2 sm:gap-4">
+          <nav
+            className={`${isMenuOpen ? 'flex' : 'hidden'} flex-col sm:flex sm:flex-row justify-center sm:justify-end gap-2 sm:gap-4 w-full sm:w-auto mt-4 sm:mt-0`}
+          >
             <TabButton tab="home" label="Home" icon={Rocket} />
             <TabButton tab="services" label="Services" icon={Server} />
             <TabButton tab="interns" label="Interns" icon={Lightbulb} />
@@ -422,9 +438,9 @@ const App = () => {
                   <pre className="text-blue-400 overflow-x-auto">
                     <code className="whitespace-pre-wrap">
       {`// Axora Solutions: We code the future.
-            const AxoraSolutions = (focus) => {
-   const coreServices = ['Web Dev', 'Cloud', 'AI/ML'];
-  // Find your solution.                   
+          const AxoraSolutions = (focus) => {
+  const coreServices = ['Web Dev', 'Cloud', 'AI/ML'];
+// Find your solution.                   
   const solution = coreServices.find(s => s === focus) || 'Integrated Services';
   return \`Your partner in \${solution}.\`;
 };
