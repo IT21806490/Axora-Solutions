@@ -224,7 +224,7 @@ const App = () => {
     }
   };
 
-  const TabButton = ({ tab, label, icon: Icon }) => (
+  const TabButton = ({ tab, label }) => ( // Removed `icon` prop from here
     <button
       onClick={() => handleTabClick(tab)}
       className={`px-4 py-2 rounded-full font-medium transition-colors duration-300
@@ -233,7 +233,6 @@ const App = () => {
           : 'text-gray-400 hover:text-white hover:bg-slate-800'
         } flex items-center gap-2`}
     >
-      <Icon size={18} />
       <span>{label}</span>
     </button>
   );
@@ -387,11 +386,12 @@ const App = () => {
           <nav
             className={`${isMenuOpen ? 'flex' : 'hidden'} flex-col sm:flex sm:flex-row justify-center sm:justify-end gap-2 sm:gap-4 w-full sm:w-auto mt-4 sm:mt-0`}
           >
-            <TabButton tab="home" label="Home"/>
-            <TabButton tab="services" label="Services"/>
-            <TabButton tab="interns" label="Interns"/>
-            <TabButton tab="blog" label="Blog"/>
-            <TabButton tab="contact" label="Contact"/>
+            {/* Removed the icon props from each TabButton */}
+            <TabButton tab="home" label="Home" />
+            <TabButton tab="services" label="Services" />
+            <TabButton tab="interns" label="Interns" />
+            <TabButton tab="blog" label="Blog" />
+            <TabButton tab="contact" label="Contact" />
           </nav>
         </header>
       </div>
