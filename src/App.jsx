@@ -136,28 +136,28 @@ const App = () => {
   // Staggered animation when a tab is active
   useEffect(() => {
     // Dynamically set the page title and meta description based on the active tab for SEO
-    let title = 'Axora Solutions';
-    let description = "Axora Solutions is a leading IT company offering expert services in web development, cloud solutions, AI, and more. We build the future, one line of code at a time.";
+    let title = 'Nexoura Solutions';
+    let description = "Nexoura Solutions is a leading IT company offering expert services in web development, cloud solutions, AI, and more. We build the future, one line of code at a time.";
     switch (activeTab) {
       case 'services':
-        title = 'Services - Axora Solutions';
+        title = 'Services - Nexoura Solutions';
         description = "Explore our comprehensive suite of IT services including web development, cloud computing, and AI solutions.";
         break;
       case 'interns':
-        title = 'Internships - Axora Solutions';
+        title = 'Internships - Nexoura Solutions';
         description = "Kickstart your career with our hands-on tech internships in software engineering, AI/ML, and design.";
         break;
       case 'blog':
-        title = 'Blog - Axora Solutions';
+        title = 'Blog - Nexoura Solutions';
         description = "Read our latest insights on technology, innovation, and the future of coding from industry experts.";
         break;
       case 'contact':
-        title = 'Contact - Axora Solutions';
-        description = "Get in touch with Axora Solutions for expert IT consulting and project inquiries.";
+        title = 'Contact - Nexoura Solutions';
+        description = "Get in touch with Nexoura Solutions for expert IT consulting and project inquiries.";
         break;
       default:
-        title = 'Home - Axora Solutions';
-        description = "Axora Solutions is a leading IT company offering expert services in web development, cloud solutions, AI, and more. We build the future, one line of code at a time.";
+        title = 'Home - Nexoura Solutions';
+        description = "Nexoura Solutions is a leading IT company offering expert services in web development, cloud solutions, AI, and more. We build the future, one line of code at a time.";
     }
     document.title = title;
     const metaDescription = document.querySelector('meta[name="description"]') || document.createElement('meta');
@@ -372,7 +372,7 @@ const App = () => {
           <div className="flex items-center justify-between w-full sm:w-auto">
             <div className="flex items-center gap-2">
               <Code size={32} className="text-blue-400" />
-              <span className="text-2xl font-bold tracking-wider text-white">AXORA SOLUTIONS</span>
+              <span className="text-2xl font-bold tracking-wider text-white">NEXOURA SOLUTIONS</span>
             </div>
             {/* Mobile menu toggle button */}
             <button
@@ -437,15 +437,15 @@ const App = () => {
                   </div>
                   <pre className="text-blue-400 overflow-x-auto">
                     <code className="whitespace-pre-wrap">
-      {`// Axora Solutions: We code the future.
-          const AxoraSolutions = (focus) => {
+      {`// Nexoura Solutions: We code the future.
+          const NexouraSolutions = (focus) => {
   const coreServices = ['Web Dev', 'Cloud', 'AI/ML'];
 // Find your solution.                   
   const solution = coreServices.find(s => s === focus) || 'Integrated Services';
   return \`Your partner in \${solution}.\`;
 };
 
-AxoraSolutions('Web Dev');
+NexouraSolutions('Web Dev');
 // Returns: 'Your partner in Web Dev.'
 `}
                     </code>
@@ -603,7 +603,7 @@ AxoraSolutions('Web Dev');
       <footer className="bg-slate-900 border-t border-slate-800 py-8 px-4 sm:px-8 lg:px-16 relative z-10">
         <div className="max-w-7xl mx-auto flex flex-col items-center justify-between space-y-4 sm:space-y-0 sm:flex-row">
           <div className="text-center sm:text-left">
-            <p className="text-gray-400">Axora Solutions.</p>
+            <p className="text-gray-400">Nexoura Solutions.</p>
             <p className="text-sm text-gray-500">
               &copy; 2025 All rights reserved. 
             </p>
